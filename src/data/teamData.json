@@ -1,0 +1,130 @@
+[
+  {
+    "id": 1,
+    "name": "Xu Hui",
+    "tag": "Dry Lab Leader",
+    "bio": "Describe biological data and optimize the model. Use technology to help gene sequences of the engineered cells.",
+    "imageSrc": "xu-hui.jpeg",
+    "role": "Dry Lab",
+    "group": "students"
+  },
+  {
+    "id": 2,
+    "name": "Chen Jiali",
+    "tag": "Human Practice Leader",
+    "bio": "Something great happened here, but it's over with.",
+    "imageSrc": "chen-jiali.jpeg",
+    "role": "Human Practice",
+    "group": "students"
+  },
+  {
+    "id": 3,
+    "name": "Chen Minghan",
+    "tag": "Team Leader ",
+    "bio": "Behind every successful person, there is a spine.",
+    "imageSrc": "chen-minghan.jpeg",
+    "role": "Dry Lab",
+    "group": "students"
+  },
+  {
+    "id": 4,
+    "name": "Wang Yuhan",
+    "tag": " ",
+    "bio": "Meowmeowmeow",
+    "imageSrc": "wang-yuhan.jpeg",
+    "role": "Wet Lab",
+    "group": "students"
+  },
+  {
+    "id": 5,
+    "name": "Huang Huanning",
+    "tag": "Team Leader",
+    "bio": "Bro just chill.",
+    "imageSrc": "huang-hanning.jpeg",
+    "role": "Wet lab",
+    "group": "students"
+  },
+  {
+    "id": 6,
+    "name": "Lin Qiyu",
+    "tag": " ",
+    "bio": "Connecting user needs with business goals, one sprint at a time.",
+    "imageSrc": "lin-qiyu.png",
+    "role": "Dry lab",
+    "group": "students"
+  },
+  {
+    "id": 7,
+    "name": "Xuan Zheng",
+    "tag": " ",
+    "bio": "o(^▽^)o",
+    "imageSrc": "xuan-zheng.jpeg",
+    "role": "Dry lab",
+    "group": "students"
+  },
+  {
+    "id": 8,
+    "name": "Xing Yifei",
+    "tag": " ",
+    "bio": "May we all",
+    "imageSrc": "xing-yifei.png",
+    "role": "Wet Lab",
+    "group": "students"
+  },
+  {
+    "id": 9,
+    "name": "Qin Rui",
+    "tag": " ",
+    "bio": "(⊙o⊙)",
+    "imageSrc": "qin-rui.jpg",
+    "role": "Dry lab",
+    "group": "students"
+  },
+  {
+    "id": 10,
+    "name": "Qiu Lihan",
+    "tag": " ",
+    "bio": "Natural Selection, full ahead!",
+    "imageSrc": "qiu-lihan.png",
+    "role": "Art&Wet Lab",
+    "group": "students"
+  },
+  {
+    "id": 11,
+    "name": "Guo Haorui",
+    "tag": " ",
+    "bio": "I love biology.",
+    "imageSrc": "guo-haorui.jpg",
+    "role": "wiki",
+    "group": "students"
+  },
+  {
+    "id": 12,
+    "name": "Sun Haifeng",
+    "tag": " ",
+    "bio": "Convey project content accurately and innovatively using the web.",
+    "imageSrc": "sponge-bob.png",
+    "role": "wiki",
+    "group": "students"
+  },
+    {
+    "id": 13,
+    "name": "Lu Yiheng",
+    "tag": " ",
+    "bio": " ",
+    "imageSrc": "lu-yiheng.jpg",
+    "role": " ",
+    "group": "students"
+  },
+  
+
+  {
+    "id": 14,
+    "name": "Dr. Wei Zhang",
+    "role": "Principal Investigator",
+    "bio": "Leading interdisciplinary research at the frontier of synthetic biology.",
+    "imageSrc": "sponge-bob.png",
+    "tag": "Research",
+    "group": "pi"
+  }
+]
