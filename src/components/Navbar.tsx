@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import gsap from "gsap";
 import logoUrl from "../assets/igem_with_circle.jpg";
 import { useProjectMenuAnimation } from "./useProjectMenuAnimation";
@@ -60,7 +61,7 @@ export function Navbar() {
         />
 
         <nav className="relative z-10 mx-auto flex h-[90px] w-full max-w-[1412px] items-center justify-between px-[54px]">
-          <a href="/" className="flex items-center gap-6">
+          <Link to="/" className="flex items-center gap-6">
             <img
               src={logoUrl}
               alt="CUHK-Shenzhen logo"
@@ -73,24 +74,24 @@ export function Navbar() {
             >
               CUHK-Shenzhen
             </span>
-          </a>
+          </Link>
 
           <div className="flex items-center gap-[86px]">
             <div className="flex h-[64px] items-center rounded-full bg-white px-[46px]">
-              <a
-                href="/"
+              <Link
+                to="/"
                 className="flex h-full items-center px-[24px] text-[28px] font-bold tracking-[0.04em] text-black transition hover:opacity-60"
               >
                 Home
-              </a>
+              </Link>
 
               <div
                 className="relative flex h-full items-center"
                 onMouseEnter={showProjectMenu}
                 onMouseLeave={hideProjectMenu}
               >
-                <a
-                  href="/project"
+                <Link
+                  to="/project"
                   className="flex h-full items-center gap-3 px-[24px] text-[28px] font-bold tracking-[0.04em] text-black transition hover:opacity-60"
                 >
                   Project
@@ -100,7 +101,7 @@ export function Navbar() {
                   >
                     ▼
                   </span>
-                </a>
+                </Link>
 
                 <div
                   ref={dropdownRef}
@@ -108,25 +109,25 @@ export function Navbar() {
                 >
                   <div className="-rotate-[4deg] space-y-2">
                     {projectLinks.map((label) => (
-                      <a
+                      <Link
                         key={label}
-                        href={`/${label.toLowerCase().replace(/\s+/g, "-")}`}
+                        to={`/${label.toLowerCase().replace(/\s+/g, "-")}`}
                         className="block text-[64px] font-extrabold leading-[1.02] tracking-[0] text-[#FF3B05] transition hover:translate-x-2"
                       >
                         {label}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
               </div>
             </div>
 
-            <a
-              href="/teamGrid"
+            <Link
+              to="/teamGrid"
               className="flex h-[64px] min-w-[170px] items-center justify-center rounded-[28px] bg-[#FF3B05] px-10 text-[28px] font-semibold tracking-[0.06em] text-white transition hover:-translate-y-0.5 hover:shadow-lg"
             >
               Team
-            </a>
+            </Link>
           </div>
         </nav>
       </header>
