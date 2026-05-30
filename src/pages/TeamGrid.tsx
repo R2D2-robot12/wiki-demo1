@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import TeamCard from "../components/TeamCard";
+import Footer from "../components/Footer";
 import cloudUrl from "../assets/cloude_svg.svg";
 import teamData from "../data/teamData.json";
 
@@ -137,7 +138,7 @@ const TeamLetter = ({
         fontWeight: 700,
         lineHeight: 0.86,
         letterSpacing: "0",
-        color: "#2f6bf2",
+        color: "#00B351",
         transformOrigin: "center",
         pointerEvents: "none",
         userSelect: "none",
@@ -336,6 +337,7 @@ const TeamGrid = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </main>
   );
 };

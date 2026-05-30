@@ -123,7 +123,7 @@ const TeamCard = ({
             fontSize: "18px",
             fontWeight: 700,
             lineHeight: 1.2,
-            color: "#ffd0bd",
+            color: "#00B351",
             margin: 0,
           }}
         >
@@ -170,7 +170,7 @@ const TeamCard = ({
             fontSize: "18px",
             fontWeight: 700,
             lineHeight: 1.25,
-            color: "#ffd0bd",
+            color: "#00B351",
             margin: "0 0 22px 0",
           }}
         >
@@ -184,7 +184,7 @@ const TeamCard = ({
               fontSize: "16px",
               fontWeight: 500,
               lineHeight: 1.45,
-              color: "#c7f7db",
+              color: "#ffd0bd",
               margin: "0 0 28px 0",
             }}
           >

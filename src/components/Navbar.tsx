@@ -4,7 +4,45 @@ import gsap from "gsap";
 import logoUrl from "../assets/igem_with_circle.jpg";
 import { useProjectMenuAnimation } from "./useProjectMenuAnimation";
 
-const projectLinks = ["Project", "Wet Lab", "Dry Lab", "Human Practice"];
+const headerMenuGroups = [
+  {
+    label: "Project",
+    path: "/project",
+    links: [
+      { label: "Description", path: "/project/description" },
+      { label: "Engineering", path: "/project/engineering" },
+      { label: "Results", path: "/project/results" },
+      { label: "Contribution", path: "/project/contribution" },
+    ],
+  },
+  {
+    label: "Wet Lab",
+    path: "/wet-lab",
+    links: [
+      { label: "Experiments", path: "/wet-lab/experiments" },
+      { label: "Part", path: "/wet-lab/part" },
+      { label: "Measurement", path: "/wet-lab/measurement" },
+      { label: "Results", path: "/wet-lab/results" },
+      { label: "Notebook", path: "/wet-lab/notebook" },
+    ],
+  },
+  {
+    label: "Dry Lab",
+    path: "/dry-lab",
+    links: [
+      { label: "Model", path: "/dry-lab/model" },
+      { label: "Software", path: "/dry-lab/software" },
+    ],
+  },
+  {
+    label: "HP",
+    path: "/human-practice",
+    links: [
+      { label: "iHP", path: "/HP/ihp" },
+      { label: "Education", path: "/HP/education" },
+    ],
+  },
+];
 
 export function Navbar() {
   const brandTextRef = useRef<HTMLSpanElement>(null);
@@ -16,6 +54,7 @@ export function Navbar() {
     arrowRef,
     showProjectMenu,
     hideProjectMenu,
+    showSubmenu,
   } = useProjectMenuAnimation();
 
   useEffect(() => {
@@ -35,11 +74,12 @@ export function Navbar() {
       });
     };
 
+    const shouldStartHidden = window.scrollY > 8;
     gsap.set(brandText, {
-      autoAlpha: window.scrollY > 8 ? 0 : 1,
-      y: window.scrollY > 8 ? -18 : 0,
+      autoAlpha: shouldStartHidden ? 0 : 1,
+      y: shouldStartHidden ? -18 : 0,
     });
-    isBrandHiddenRef.current = window.scrollY > 8;
+    isBrandHiddenRef.current = shouldStartHidden;
 
     window.addEventListener("scroll", setBrandVisibility, { passive: true });
     return () => window.removeEventListener("scroll", setBrandVisibility);
@@ -105,17 +145,40 @@ export function Navbar() {
 
                 <div
                   ref={dropdownRef}
-                  className="fixed right-[-20px] top-[-80px] z-50 w-[760px] rounded-[72px] bg-white px-24 py-28 shadow-[0_32px_80px_rgba(0,0,0,0.16)]"
+                  className="fixed right-[-20px] top-[-80px] z-50 w-[760px] rounded-[72px] bg-white px-24 py-24 shadow-[0_32px_80px_rgba(0,0,0,0.16)]"
                 >
-                  <div className="-rotate-[4deg] space-y-2">
-                    {projectLinks.map((label) => (
-                      <Link
-                        key={label}
-                        to={`/${label.toLowerCase().replace(/\s+/g, "-")}`}
-                        className="block text-[64px] font-extrabold leading-[1.02] tracking-[0] text-[#FF3B05] transition hover:translate-x-2"
-                      >
-                        {label}
-                      </Link>
+                  <div className="-rotate-[4deg] space-y-4">
+                    {headerMenuGroups.map((group, index) => (
+                      <div key={group.label} className="relative w-fit">
+                        <Link
+                          to={group.path}
+                          onMouseEnter={() => showSubmenu(index)}
+                          className="block text-[64px] font-extrabold leading-[1.02] tracking-[0] text-[#FF3B05] transition hover:translate-x-2"
+                        >
+                          {group.label}
+                        </Link>
+
+                        <div
+                          data-submenu-card
+                          className={`absolute left-[calc(100%+36px)] z-10 w-[310px] rounded-[34px] bg-white px-9 py-8 shadow-[0_24px_60px_rgba(0,0,0,0.14)] ${
+                            group.label === "HP"
+                              ? "top-[18px]"
+                              : "top-[-42px]"
+                          }`}
+                        >
+                          <div className="space-y-3">
+                            {group.links.map((item) => (
+                              <Link
+                                key={item.path}
+                                to={item.path}
+                                className="block text-[24px] font-bold leading-[1.05] tracking-[0] text-[#FF3B05] transition hover:translate-x-1"
+                              >
+                                {item.label}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
                     ))}
                   </div>
                 </div>
